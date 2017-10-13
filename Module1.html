@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery slideLeft and slideRight Effect</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style type="text/css">
+
+
+    .box-inner{
+        width: 0px;
+        height:100px;
+        padding: 0px;
+        overflow: hidden;
+        margin-left: 0px;
+        padding-left: 30px;
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 40px;
+    }
+
+
+    .slide-right{
+        height:100px;
+        background-color: grey;
+        border-radius: 40px;
+        cursor: pointer; 
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var boxWidth = $(".box-inner").width();
+        $(".slide-left").click(function(){
+            $(".box-inner").animate({
+                width: 0
+            });
+        });
+        $(".slide-right").click(function(){
+            $(".box-inner").animate({
+                width:550,
+                marginLeft:0,
+                paddingLeft:30,
+                borderWidth: 1,
+            });
+        });
+    });
+</script>
+</head>
+<body>
+
+<br>
+<br>
+
+    <div class="container-fluid">
+        <div class="row">
+                <div class="col-sm-2 col-sm-offset-2 slide-right"><h1 style="padding-top:10px;">Slide Right</h1></div>
+                
+            <!-- <div class="slide-left">Slide Left</div>  -->
+            
+
+                <div class="box-inner col-sm-6""><h3 >Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet..Lorem ipsum .</h3></div>
+            </div>
+            </div>
+</body>
+</html>
