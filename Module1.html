@@ -1,65 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<title>Abb animate</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<style type="text/css">
+    <title>Click to reveal</title>
 
 
-    .box-inner{
+    <style>
+        
+    .pannel-item-spot{
         width: 0px;
-        height:100px;
+        height:71px;
         padding: 0px;
         overflow: hidden;
-        margin-left: 0px;
-        padding-left: 30px;
-        border-bottom-right-radius: 40px;
-        border-top-right-radius: 40px;
+        margin-left: 35px;
+        margin-top:0px;
+        padding-left: 0px;
+        padding-right: 30px;
+        border:1px solid grey;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-radius: 40px;
+        border-left:0px;
+        position:absolute;
+
     }
-
-
-    .slide-right{
-        height:100px;
+    .pannel-item-data{
+        height:71px;
+        width:238px;
+        color:white;
         background-color: grey;
         border-radius: 40px;
         cursor: pointer; 
+        position:absolute;
     }
-</style>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
+        
+    </style>
+    <script type="text/javascript">
     $(document).ready(function(){
         var boxWidth = $(".box-inner").width();
-        $(".slide-left").click(function(){
+
+        $(".pannel-item-spot").click(function(){
             $(".box-inner").animate({
-                width: 0
+                width: 0,
+                paddingRight:15,
+                paddingLeft:0
             });
         });
         $(".slide-right").click(function(){
-            $(".box-inner").animate({
-                width:550,
-                marginLeft:0,
-                paddingLeft:30,
-                borderWidth: 1,
+            $( ".showtext").show(1500);
+            $( ".showtext").animate({
+                width:900
             });
+            $(".box-inner").animate({
+                width:900,
+                height:71,
+                marginLeft:130,
+                marginTop:0,
+                paddingTop:0
+                
+            });
+
+            
+            $(".slide-right").animate({width:238});
+            
         });
     });
 </script>
 </head>
 <body>
 
-<br>
-<br>
+<div class="container">
+                    <div class="main">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="text-left animated fadeInDown">
+                                    <h2 class="contentHeading">Types of Error</h2>
+                                    
+                                    <p class="contentMatter">The ABB Fair Process classifies errors, violations or mistakes within the organisation into 4 different types.</p>
+                                    
+                                    <p class="insructionText">Click on each one to learn more.</p>
 
-    <div class="container-fluid">
-        <div class="row">
-                <div class="col-sm-2 col-sm-offset-2 slide-right"><h1 style="padding-top:10px;">Slide Right</h1></div>
-                
-            <!-- <div class="slide-left">Slide Left</div>  -->
-            
+                                    <div class="interactive interactive-slideToggle" id="interactivity-slideToggle">
 
-                <div class="box-inner col-sm-6""><h3 >Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet..Lorem ipsum .</h3></div>
-            </div>
-            </div>
+                                        <div class="obj-block">
+                                            <div class="pannel-item-spot" >Human Error</div>
+
+                                            <div class="pannel-item-data">An error caused by the fact people are not 100% reliable all the  time. It's only natural and common that some mistakes will be made when human input is involved.</div>
+
+                                        </div>
+
+                                        <div class="obj-block">
+                                            <a class="pannel-item-spot" href="#">Avoidable Error</a>
+
+                                            <p class="pannel-item-data">An error which could have been avoided if things had been done differetly. For example, an error that was caused by inadequate training, unclear procedures or deficient process.</p>
+
+                                        </div>
+
+                                        <div class="obj-block">
+                                            <a class="pannel-item-spot" href="#">'Due Care' Violation</a>
+
+                                            <p class="pannel-item-data">An error caused by someone not taking a reasonable amount of care in performing a task. This lack of 'due care' can often be caused by work pressure or the repetitive nature of the task.</p>
+
+                                        </div>
+
+
+                                        <div class="obj-block">
+                                            <a class="pannel-item-spot" href="#">Wilful Misconduct</a>
+
+                                            <p class="pannel-item-data">An error caused by someone who chose to take the action they did in the full knowledge of what the consequences would be and fully inteding to achieve that outcome. The performed their actions wilfully.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 </body>
 </html>
